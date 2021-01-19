@@ -1,0 +1,16 @@
+*.pyc
+*.swp
+*.coverage
+*.bak
+dist/
+*.egg-info/
+.virtualenv
+.cache
+.idea/
+site/
+.python-version
+.pytest_cache/
+irida-uploader.log
+irida_uploader_status.info
+.vscode/
+venv/

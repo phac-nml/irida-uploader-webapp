@@ -1,0 +1,30 @@
+{% extends "template.html" %}
+{% block title %}
+
+<title>Run Table</title>
+
+{% endblock %}
+{% block body %}
+
+<script type="text/javascript" src="/static/js/run_table.js"></script>
+
+<link rel="stylesheet" href="/static/css/run_table.css">
+
+<div class="table_container">
+  <table id="run_table" cellspacing="0"></table>
+</div>
+
+<div class="button_container">
+  <button id="refresh">Refresh</button>
+  <button id="upload_run">Upload</button>
+</div>
+
+<div class="text_container">
+  <textarea id="sample_sheet"></textarea>
+</div>
+
+<div class="button_container">
+  <button id="save_sample_sheet">Save</button>
+</div>
+
+{% endblock %}
