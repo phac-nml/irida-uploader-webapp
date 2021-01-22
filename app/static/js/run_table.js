@@ -21,7 +21,7 @@ var getUrlParameter = function getUrlParameter(sParam) {
 
 $(document).ready(function () {
   var run = getUrlParameter('run');
-  $.get('/tables/run_table?run='+run, function (data) {
+  var run_status = $.get('/tables/run_table?run='+run, function (data) {
     $('#run_table').DataTable({
       data: data.data,
       paging: true,
@@ -32,7 +32,13 @@ $(document).ready(function () {
         {"data": "message", "title": "Message"},
       ]
     });
+    // Check if we should show the continue run button, only partial runs can be continued
+    console.log("run status: " + data.data[0].status);
+    if (data.data[0].status !== "partial") {
+        document.getElementById("continue_run").style.display = "none";
+    }
   });
+
 
 
   $.get('/tables/run_sample_sheet?run='+run, function(data){
@@ -50,6 +56,12 @@ $(document).ready(function () {
   document.getElementById("upload_run").onclick = function(){
     console.log("upload button clicked");
     $.post('/tables/upload_run?run='+run);
+    location.reload();
+  }
+
+  document.getElementById("continue_run").onclick = function(){
+    console.log("continue run button clicked")
+    $.post('/tables/continue_run?run='+run)
     location.reload();
   }
 

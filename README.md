@@ -20,7 +20,10 @@ This application is a flask app that runs the irida uploader to monitor a direct
 * Edit sample sheets [DONE]
 * Create backups of sample sheets when edited [DONE]
 * Add uploading functionality [DONE]
-* Get Continue Upload feature working
+* Get Continue Upload feature working [DONE]
+* Add a way to refresh page when an upload finishes, to show the user that it is in fact done.
+    * would this need to be async?
+    * Could we have the route that runs the upload only return on completion of the python function?
 * Add security layer
 * Make it not ugly
 * Add error catching and general code cleanup

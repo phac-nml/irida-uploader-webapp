@@ -45,3 +45,11 @@ def upload_run():
     print("run_sample_sheet: " + run_dir)
     client.upload_run(run_dir)
     return jsonify(success=True)
+
+
+@tables.route("/continue_run", methods=['POST'])
+def continue_run():
+    run_dir = request.args.get('run', '')
+    print("run_sample_sheet: " + run_dir)
+    client.upload_run(run_dir=run_dir, continue_upload=True)
+    return jsonify(success=True)
